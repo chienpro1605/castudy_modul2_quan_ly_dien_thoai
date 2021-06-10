@@ -33,6 +33,17 @@ public class ManagementBill {
         }
         System.out.println("---------------------");
     }
+    public void seachBill(String name){
+        boolean customerName = false;
+        for (int i = 0; i< billList.size(); i++){
+            if (billList.get(i).getCustomerName().equals(name)){
+                System.out.println( billList.get(i));
+                customerName = true;
+            }
+        }if (!customerName){
+            System.out.println("không tồn tại tên khách hàng này");
+        }
+    }
     public int totalSaleMonth(String month){
         int sum = 0;
         for (int i = 0; i<billList.size(); i++){

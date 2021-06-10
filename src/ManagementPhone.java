@@ -1,8 +1,5 @@
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
 public class ManagementPhone {
    private List<PhoneInforDetail> list;
@@ -13,7 +10,6 @@ public class ManagementPhone {
         }catch (Exception e){
             this.list = new ArrayList<>();
         }
-
     }
 
     public List<PhoneInforDetail> getList() {
@@ -53,14 +49,21 @@ public class ManagementPhone {
         return -1;
     }
     public void deletePhone(int id) throws IOException {
+        Scanner scanner = new Scanner(System.in);
         int index = findById(id);
         if (index == -1){
             System.out.println("không tìm thấy mã máy này");
         }else {
-            list.remove(index);
-            ReadWriteCsv.writeToFile("data.csv", list);
-            System.out.println("bạn đã xóa thành công");
-            display();
+            System.out.println("bạn có chắc chắn muốn xóa không?    1.yes    2.no");
+            int option = scanner.nextInt();
+            if (option ==1){
+                list.remove(index);
+                ReadWriteCsv.writeToFile("data.csv", list);
+                System.out.println("bạn đã xóa thành công");
+                display();
+            }else if (option == 2){
+                System.out.println("ok k xóa thì thôi!");
+            }
         }
     }
      public void editPhone(int id, PhoneInforDetail phoneInforDetail) throws IOException {

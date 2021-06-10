@@ -208,8 +208,8 @@ public class MainRunPhone {
                     ReadWriteCsvBill.writeToBill("billdata.csv",managementBill.getBillList(), idPhone4);
                     break;
                 case 9:
-                    managementBill.displayBill();
                     ReadWriteCsvBill.readFromBill("billdata.csv");
+                    managementBill.displayBill();
                     break;
                 case 10:
                     System.out.println("tổng daonh thu tháng x");
@@ -217,6 +217,11 @@ public class MainRunPhone {
                     System.out.println(managementBill.totalSaleMonth(month));
                     break;
                 case 11:
+                    System.out.println("nhập tên khách hàng cần tìm kiếm:  ");
+                    String name = scanner.nextLine();
+                    managementBill.seachBill(name);
+                    break;
+                case 12:
                     System.out.println("sy iu ơ gên!!");
                     System.exit(0);
             }
@@ -234,6 +239,7 @@ public class MainRunPhone {
         System.out.println("8.đặt hàng");
         System.out.println("9.hiển thị các đơn đặt hàng");
         System.out.println("10.tổng doanh thu hằng tháng");
-        System.out.println("11.thoát chương trình");
+        System.out.println("11.tìm kiếm hóa đơn");
+        System.out.println("12.thoát");
     }
 }

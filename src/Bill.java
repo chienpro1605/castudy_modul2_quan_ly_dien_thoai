@@ -10,7 +10,6 @@ public class Bill extends Order{
 
     public Bill() {
     }
-
     public Bill(String customerName, String phoneNumber, String address, int idPhone,String phoneName, int price, String dayOrder, int idOrder, int amount, int totalPay) {
         super(customerName, phoneNumber, address, dayOrder);
         this.idPhone = idPhone;
