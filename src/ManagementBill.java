@@ -5,7 +5,7 @@ import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ManagementBill {
+public class ManagementBill implements BillInterFace {
    private List<Bill> billList;
 
     public ManagementBill (){
@@ -24,15 +24,18 @@ public class ManagementBill {
     public void setBillList(List<Bill> billList) {
         this.billList = billList;
     }
+    @Override
     public void addBill(Bill bill){
         billList.add(bill);
     }
+    @Override
     public void displayBill(){
         for (int i = 0; i<billList.size(); i++){
             System.out.println(billList.get(i));
         }
         System.out.println("---------------------");
     }
+    @Override
     public void seachBill(String name){
         boolean customerName = false;
         for (int i = 0; i< billList.size(); i++){
@@ -44,6 +47,7 @@ public class ManagementBill {
             System.out.println("không tồn tại tên khách hàng này");
         }
     }
+    @Override
     public int totalSaleMonth(String month){
         int sum = 0;
         for (int i = 0; i<billList.size(); i++){

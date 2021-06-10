@@ -1,7 +1,7 @@
 import java.io.IOException;
 import java.util.*;
 
-public class ManagementPhone {
+public class ManagementPhone implements Phone {
    private List<PhoneInforDetail> list;
 
     public ManagementPhone() {
@@ -19,7 +19,7 @@ public class ManagementPhone {
     public void setList(List<PhoneInforDetail> list) {
         this.list = list;
     }
-
+    @Override
     public void display(){
         System.out.println("danh sách điện thoại: ");
         for (int i = 0; i<list.size(); i++){
@@ -27,11 +27,13 @@ public class ManagementPhone {
         }
         System.out.println("----------------------------");
     }
+    @Override
     public void addPhone(PhoneInforDetail phoneInforDetail) throws IOException {
         list.add(phoneInforDetail);
         ReadWriteCsv.writeToFile("data.csv", list);
         System.out.println("đã thêm thành công điện thoại vào danh sách");
     }
+    @Override
     public boolean checkExistedId(int id){
         for (int i = 0; i<list.size(); i++){
             if (list.get(i).getIdPhone() == id){
@@ -40,6 +42,7 @@ public class ManagementPhone {
         }
         return true;
     }
+    @Override
     public int findById(int id){
         for (int i = 0; i<list.size(); i++){
             if (list.get(i).getIdPhone() == id){
@@ -48,6 +51,7 @@ public class ManagementPhone {
         }
         return -1;
     }
+    @Override
     public void deletePhone(int id) throws IOException {
         Scanner scanner = new Scanner(System.in);
         int index = findById(id);
@@ -66,6 +70,7 @@ public class ManagementPhone {
             }
         }
     }
+    @Override
      public void editPhone(int id, PhoneInforDetail phoneInforDetail) throws IOException {
          if (findById(id) == -1){
              System.out.println("mã máy này k tồn tại");
@@ -75,6 +80,7 @@ public class ManagementPhone {
              System.out.println("cập nhật thành công");
          }
      }
+     @Override
      public void seachById(int id){
         int index = findById(id);
         if (index == -1){
@@ -83,6 +89,7 @@ public class ManagementPhone {
             System.out.println(list.get(index).toString());
         }
     }
+    @Override
     public void seachByName(String name){
         boolean checkName  = false;
          for (int i = 0; i<list.size(); i++){
@@ -95,6 +102,7 @@ public class ManagementPhone {
              System.out.println("tên điện thoại này không tồn tại");
          }
     }
+    @Override
     public void seachByPrice(int firstPrice, int lastPrice){
         boolean checkPrice = false;
         for (int i = 0; i<list.size(); i++){
@@ -107,6 +115,7 @@ public class ManagementPhone {
             System.out.println("không tìm thấy");
         }
     }
+    @Override
     public void sortByPrice(){
         Collections.sort(list, new Comparator<PhoneInforDetail>() {
             @Override
@@ -115,6 +124,7 @@ public class ManagementPhone {
             }
         });
     }
+    @Override
     public void sortByName(){
         Collections.sort(list, new Comparator<PhoneInforDetail>() {
             @Override
@@ -123,6 +133,7 @@ public class ManagementPhone {
             }
         });
     }
+    @Override
     public void sortByBrand(){
         Collections.sort(list, new Comparator<PhoneInforDetail>() {
             @Override
