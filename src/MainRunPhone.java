@@ -9,7 +9,21 @@ public class MainRunPhone {
         Scanner scanner = new Scanner(System.in);
         ValidatePhone validatePhone = new ValidatePhone();
         ManagementBill managementBill = new ManagementBill();
-        Login.login();
+        ManagementAccount managementAccount = new ManagementAccount();
+        System.out.println("Bạn đã có tài khoản chưa? Nếu chưa hãy đăng ký: ");
+        System.out.println("1.Đăng nhập      2.Đăng ký");
+        int optionAcount = scanner.nextInt();
+        scanner.nextLine();
+        if (optionAcount == 1){
+            managementAccount.logIN();
+        }else if (optionAcount == 2){
+            managementAccount.registerAccount();
+            managementAccount.logIN();
+        }else {
+            System.out.println("bấm 1 và 2 thôi pạn ơi!");
+        }
+
+       // Login.login();
         while (true){
             showMenu();
             int choice =-1;
@@ -228,7 +242,7 @@ public class MainRunPhone {
         }
     }
     public static void showMenu(){
-        System.out.println("=======Menu============");
+        System.out.println("=======WELCOME YOU TO THẾ GIỚI DI ĐỘNG====");
         System.out.println("1.thêm mới điện thoại: ");
         System.out.println("2.hiển thị thông tin điện thoại: ");
         System.out.println("3.cập nhật thông tin điện thoại: ");

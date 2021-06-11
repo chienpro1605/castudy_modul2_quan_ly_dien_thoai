@@ -1,4 +1,4 @@
-public class Order {
+public abstract class Order {
     private String customerName;
     private String phoneNumber;
     private String address;
@@ -55,6 +55,7 @@ public class Order {
                 ", dayOrder='" + dayOrder + '\'' +
                 '}';
     }
+    public abstract int getTotalPay();
     public String getMonth(){
         String[] month = dayOrder.split("/");
         return month[1];

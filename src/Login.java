@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Login {
@@ -16,5 +18,14 @@ public class Login {
             System.err.println("Đăng nhập thất bại!!");
             login();
         }
+    }
+    static void registerAcount(){
+        List<String> account = new ArrayList<>();
+        System.out.println("nhập tên tài khoản: ");
+        String nameAccount = scanner.nextLine();
+        System.out.println("nhập mật khẩu: ");
+        String password = scanner.nextLine();
+        System.out.println("nhập email: ");
+        String email = scanner.nextLine();
     }
 }

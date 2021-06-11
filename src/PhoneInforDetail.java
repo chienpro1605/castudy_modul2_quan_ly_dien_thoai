@@ -1,4 +1,6 @@
-public class PhoneInforDetail extends MobilePhone{
+import property.MobilePhone;
+
+public class PhoneInforDetail extends MobilePhone {
     private final String STATUS_1="đã bán";
     private final String STATUS_2="còn hàng";
     private int idPhone;

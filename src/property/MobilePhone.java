@@ -1,3 +1,5 @@
+package property;
+
 public class MobilePhone {
     private String name;
     private String brand;
@@ -38,7 +40,7 @@ public class MobilePhone {
 
     @Override
     public String toString() {
-        return "MobilePhone{" +
+        return "property.MobilePhone{" +
                 "name='" + name + '\'' +
                 ", brand='" + brand + '\'' +
                 ", price='" + price + '\'' +

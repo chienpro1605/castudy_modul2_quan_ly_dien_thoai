@@ -74,6 +74,7 @@ public class Bill extends Order{
     public void setAmount(int amount) {
         this.amount = amount;
     }
+    @Override
     public int getTotalPay(){
         return this.amount*getPrice(idPhone);
     }
