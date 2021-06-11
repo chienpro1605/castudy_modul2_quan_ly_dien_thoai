@@ -1,3 +1,5 @@
+package property;
+
 public abstract class Order {
     private String customerName;
     private String phoneNumber;
@@ -48,7 +50,7 @@ public abstract class Order {
 
     @Override
     public String toString() {
-        return "Order{" +
+        return "property.Order{" +
                 "customerName='" + customerName + '\'' +
                 ", phoneNumber=" + phoneNumber +
                 ", address=" + address +

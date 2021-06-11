@@ -1,3 +1,5 @@
+package property;
+
 import property.MobilePhone;
 
 public class PhoneInforDetail extends MobilePhone {
@@ -77,7 +79,7 @@ public class PhoneInforDetail extends MobilePhone {
 
     @Override
     public String toString() {
-        return "PhoneInforDetail{" +
+        return "property.PhoneInforDetail{" +
                 "name=" +getName() +
                 ", brand=" + getBrand() +
                 ", price=" + getPrice() +
