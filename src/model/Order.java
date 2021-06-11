@@ -1,4 +1,4 @@
-package property;
+package model;
 
 public abstract class Order {
     private String customerName;

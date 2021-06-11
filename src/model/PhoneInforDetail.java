@@ -1,6 +1,4 @@
-package property;
-
-import property.MobilePhone;
+package model;
 
 public class PhoneInforDetail extends MobilePhone {
     private final String STATUS_1="đã bán";

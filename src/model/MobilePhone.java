@@ -1,4 +1,4 @@
-package property;
+package model;
 
 public class MobilePhone {
     private String name;
