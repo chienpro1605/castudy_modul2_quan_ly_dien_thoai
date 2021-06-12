@@ -236,15 +236,21 @@ public class MainRunPhone {
                     managementBill.displayBill();
                     break;
                 case 10:
-                    System.out.println("tổng daonh thu tháng x");
+                    System.out.println("tổng doanh thu theo tháng: ");
+                    System.out.println("nhập tháng: ");
                     String month = scanner.nextLine();
-                    System.out.println(managementBill.totalSaleMonth(month));
+                    System.out.println("nhập năm: ");
+                    String year = scanner.nextLine();
+                    System.out.println(managementBill.totalSaleMonth(month, year));
                     break;
                 case 11:
                     System.out.println("nhập tên khách hàng cần tìm kiếm:  ");
                     String name = scanner.nextLine();
-                    managementBill.seachBill(name);
+                    System.out.println("nhập số điện thoại cần tìm kiếm: ");
+                    String phone = scanner.nextLine();
+                    managementBill.seachBill(name, phone);
                     break;
+
                 case 12:
                     System.out.println("sy iu ơ gên!!");
                     System.exit(0);
@@ -260,7 +266,7 @@ public class MainRunPhone {
         System.out.println("5.tìm kiếm điện thoại");
         System.out.println("6.sắp xếp danh sách điện thoại");
         System.out.println("7.hiển thị danh sách điện thoại đã lưu");
-        System.out.println("8.đặt hàng");
+        System.out.println("8. mua hàng");
         System.out.println("9.hiển thị các đơn đặt hàng");
         System.out.println("10.tổng doanh thu hằng tháng");
         System.out.println("11.tìm kiếm hóa đơn");

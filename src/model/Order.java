@@ -62,4 +62,8 @@ public abstract class Order {
         String[] month = dayOrder.split("/");
         return month[1];
     }
+    public String getYear(){
+        String[] year = dayOrder.split("/");
+        return year[2];
+    }
 }

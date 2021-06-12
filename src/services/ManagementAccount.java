@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class ManagementAccount {
+public class ManagementAccount implements AccountInterface{
  private List<Account> accountList;
  public ManagementAccount(){
      try {
@@ -25,6 +25,7 @@ public class ManagementAccount {
     public void setAccountList(List<Account> accountList) {
         this.accountList = accountList;
     }
+    @Override
     public void registerAccount() throws IOException {
         Scanner scanner = new Scanner(System.in);
         System.out.println("nhập tên tài khoản đăng ký: ");
@@ -64,6 +65,7 @@ public class ManagementAccount {
         System.out.println("bạn đã đăng ký thành công!");
 
     }
+    @Override
     public boolean checkLogIn(String name, String password){
       for (int i = 0; i<accountList.size(); i++){
           if (accountList.get(i).getNameAccount().equals(name) && accountList.get(i).getPassWord().equals(password)){
@@ -73,6 +75,7 @@ public class ManagementAccount {
       }
         return false;
  }
+    @Override
     public void logIN(){
      Scanner scanner = new Scanner(System.in);
      String name;

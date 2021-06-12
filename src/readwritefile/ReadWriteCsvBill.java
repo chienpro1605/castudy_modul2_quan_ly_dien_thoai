@@ -12,11 +12,11 @@ public class ReadWriteCsvBill {
         Bill bill1 = new Bill();
         FileWriter fw = new FileWriter(path);
         BufferedWriter bw = new BufferedWriter(fw);
-        String str = "customerName, phoneNumber, address, idPhone, phoneName, idPhone, price, dayOrder,idOrder, amount, totalpay\n";
+        String str = "customerName, phoneNumber, address, idPhone, phoneName, price, dayOrder,idOrder, amount, totalpay\n";
         for (int i = 0; i<bill.size(); i++){
             str+=bill.get(i).getCustomerName()+ ","+bill.get(i).getPhoneNumber()+","+bill.get(i).getAddress()+","
-                +bill.get(i).getIdPhone(id)+","+bill.get(i).getPhoneName(id)+","+bill.get(i).getPrice(id)+","
-                +bill.get(i).getDayOrder()+ ","+bill.get(i).getIdOrder()+","+bill.get(i).getAmount()+","+bill.get(i).getTotalPay()+"\n";
+                    +bill.get(i).getIdPhone(id)+","+bill.get(i).getPhoneName(id)+","+bill.get(i).getPrice(id)+","
+                    +bill.get(i).getDayOrder()+ ","+bill.get(i).getIdOrder()+","+bill.get(i).getAmount()+","+bill.get(i).getTotalPay()+"\n";
             //str+=bill.get(i).toString()+"\n";
         }
         bw.write(str);

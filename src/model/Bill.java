@@ -90,11 +90,11 @@ public class Bill extends Order {
                 "customerName='" + getCustomerName() + '\'' +
                 ", phoneNumber=" + getPhoneNumber() +
                 ", address=" + getAddress() +
-                ", dayOrder='" + getDayOrder() +
-                ", idOrder=" + idOrder +
-                ", idPhone=" + getIdPhone(idPhone) +
-                ", phoneName=" + getPhoneName(idPhone) +
+                ", idPhone='" + getIdPhone(idPhone) +
+                ", phoneName=" + phoneName +
                 ", price=" + getPrice(idPhone) +
+                ", dayOrDer=" + getDayOrder() +
+                ", idOrDer=" + getIdOrder() +
                 ", amount=" + amount +
                 ", totalPay=" + getTotalPay() +
                 "} "+"\n";

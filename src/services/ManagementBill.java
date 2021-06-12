@@ -5,6 +5,8 @@ import readwritefile.ReadWriteCsvBill;
 import services.BillInterFace;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class ManagementBill implements BillInterFace {
@@ -38,25 +40,28 @@ public class ManagementBill implements BillInterFace {
         System.out.println("---------------------");
     }
     @Override
-    public void seachBill(String name){
+    public void seachBill(String name, String phoneNumber){
         boolean customerName = false;
+        boolean checkPhoneNumber = false;
         for (int i = 0; i< billList.size(); i++){
-            if (billList.get(i).getCustomerName().equals(name)){
+            if (billList.get(i).getCustomerName().equals(name) && billList.get(i).getPhoneNumber().equals(phoneNumber)){
                 System.out.println( billList.get(i));
                 customerName = true;
+                checkPhoneNumber = true;
             }
-        }if (!customerName){
-            System.out.println("không tồn tại tên khách hàng này");
+        }if (!customerName && !checkPhoneNumber){
+            System.out.println("không tìm thấy khách hàng này");
         }
     }
     @Override
-    public int totalSaleMonth(String month){
+    public int totalSaleMonth(String month, String year){
         int sum = 0;
         for (int i = 0; i<billList.size(); i++){
-            if (billList.get(i).getMonth().equals(month) ){
+            if (billList.get(i).getMonth().equals(month) && billList.get(i).getYear().equals(year)){
                 sum+=billList.get(i).getTotalPay();
             }
         }
         return sum;
     }
+
 }
